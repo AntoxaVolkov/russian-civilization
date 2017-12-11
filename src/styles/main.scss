@@ -1,0 +1,510 @@
+@import "parts/fonts.css";
+@import "parts/bootstrap.css";
+
+$header-bg-color: #000;
+$footer-bg-color: #000;
+$copyright-bg-color: #0F0F0F;
+$copyright-font-color: #595959;
+$menu-font-color: #FFF;
+$menu-bg-color--silver: #F4F4F4;
+$menu-font-color--silver: #858585;
+$menu-font-color-hover--silver: #423117;
+$text-color: #424242;
+$text-color--white: #fff;
+$color--gold: #E0AA5D;
+$cover-font-color: #FFF;
+$font-size: 14px;
+
+body{
+    font-size: $font-size;
+    color: $text-color;
+    font-family: 'Roboto', sans-serif;
+}
+
+/******* Link *******/
+.link{
+
+    &--uppercase{
+        text-transform: uppercase;
+    }
+}
+
+/******* Btn *******/
+.btn{
+    cursor: pointer;
+}
+
+/******* Header *******/
+.header{
+    background-color: $header-bg-color;
+
+    &__main-line{
+        height: 205px;
+        background-image: url('img/hbg.jpg');
+        background-position: 50%;
+        background-repeat: no-repeat;
+
+        @media (max-width: 991px){
+            height: 180px;
+        }
+    }
+
+    &__bottom-line{
+        background-color: $menu-bg-color--silver;
+    }
+
+    &__logo{
+        width: 230px;
+        padding-top: 80px;
+
+        @media (max-width: 991px){
+            padding-top: 40px;
+        }
+    }
+
+    &__menu{
+
+        &--position{
+            
+            &_right{
+                margin: 0;
+                margin-top: 60px;
+                float: right;
+            }
+
+            &_center{
+                margin: 0;
+                text-align: center;
+            }
+        }
+    }
+
+    &__slogan{
+        margin-top: 40px;
+        float: left;
+    }
+
+    &__navigation{
+        margin-top: 50px;
+    }
+
+    &__toggle{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    &__popup{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 25;
+        width: 100%;
+    }
+}
+
+/******* Toggle-popup *******/
+.toggle-popup{
+    font-size: 48px;
+    color: $menu-font-color;
+    opacity: 0.7;
+}
+
+/******* Popup *******/
+.popup{
+    display: none;
+    background: $header-bg-color;
+
+    &--active{
+        display: block;
+    }
+
+    &__container{
+        position: relative;
+        padding: 10px;
+
+    }
+
+    &__close{
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 48px;
+        color: $menu-font-color;
+        opacity: 0.7;
+        line-height: 40px;
+        font-weight: 100;
+    }
+
+    &__lang{
+        margin: 30px;
+        text-align: center;
+    }
+
+    &__menu{
+        text-align: center;
+    }
+    
+    &__user{
+        text-align: center;
+    }
+}
+
+/******* Logo *******/
+.logo{
+    text-align: center;
+
+    &__img{
+        width: 100%;
+        max-width: 230px;
+    }
+}
+
+/******* Navigation*******/
+.navigation{
+    &__menu{
+
+        &--position{
+
+            &_left{
+                margin: 0;
+                float: left;
+            }
+
+            &_right{
+                margin: 0;
+                margin-top: 5px;
+                float: right;
+        
+            }
+        }
+    }
+}
+
+/******* Menu *******/
+.menu{
+    list-style: none;
+    padding: 0;
+
+    &__item{
+        display: inline-block;
+
+        &:first-child{
+            .menu__link{
+                padding-left: 0;
+            }
+        }
+    }
+
+    &__link{
+        display: block;
+        padding: 5px 10px;
+        color: $menu-font-color;
+
+        &:hover{
+            color: $color--gold;
+            text-decoration: none;
+        }
+
+        &--active{
+            color: $color--gold;
+        }
+
+    }
+
+    &--silver{
+        background-color: $menu-bg-color--silver;
+
+        .menu__link{
+            color: $menu-font-color--silver;
+
+            &:hover{
+                color: $menu-font-color-hover--silver;
+                text-decoration: none;
+            }
+
+            &--active{
+                color: $menu-font-color-hover--silver;
+            }
+        }
+
+    }
+    
+    &--separator{
+
+        .menu__item{
+            border-right: 1px solid $menu-font-color;
+
+            &:last-child{
+                border-right: none;
+            }
+
+            .menu__link{
+                padding: 0px 10px;
+            }
+        }
+
+    }
+
+    &--column{
+
+        &_two{
+            .menu__item{
+                width: 49%;
+            }
+
+            .menu__link{
+                
+                &:first-child{
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+
+    &--soc{
+
+        @media (max-width: 991px){
+            text-align: right;
+        }
+        
+        .menu__link{
+            font-size: 32px;
+        }
+    }
+
+    &--mobi-vertical{
+
+        @media (max-width: 520px){
+            
+            .menu__item{
+                display: block;
+            }
+        }
+    }
+
+    &--footer{
+
+        @media (max-width: 991px){
+            text-align: right;
+
+            .menu__item{
+                display: block;
+                width:100%;
+            }
+        }
+    }
+}
+
+/******* Slogon *******/
+.slogon{
+    font-size: 39px;
+    color: $color--gold;
+}
+
+/******* Cover *******/
+.cover{
+    height: 279px;
+    background-image: url('img/cover.jpg');
+    background-position:  10% 10%;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    
+    &__title{
+        margin-top: 74px;
+        font-size: 58px;
+        text-align: center;
+        color: $cover-font-color;
+        text-transform: uppercase;
+
+        @media (max-width: 991px){
+            margin-top: 54px;
+            font-size: 40px;
+        }
+
+        @media (max-width: 350px){
+            margin-top: 50px;
+            font-size: 36px;
+        }
+    }
+
+    &__description{
+        font-size: 40px;
+        text-align: center;
+        color: $cover-font-color;
+
+        @media (max-width: 991px){
+            font-size: 28px;
+        }
+    }
+}
+
+/******* Main *******/
+.main{
+    background-image: url('img/bg.png');
+    background-position: 0px 70px;
+    background-repeat: no-repeat;
+}
+
+/******* Content *******/
+.content{
+
+    &__title{
+        margin-top: 80px;
+        font-size: 32px;
+    }
+
+    &__list{
+        margin: 5px 0;
+    }
+}
+
+/******* Text *******/
+.text{
+
+    &--color{
+
+        &_white{
+            color: $text-color--white;
+        }
+    }
+
+    &--size{
+        
+        &_small{
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+            font-style: 100;
+        }
+    }
+} 
+
+/******* List *******/
+.list{
+    padding: 0;
+    
+    &__list{
+        margin: 5px 0;
+    }
+
+    
+
+    &__item{
+        padding-bottom: 5px;
+
+        &--counter-bold{
+            margin-top: 49px;
+
+            &:before{
+                font-weight: bold;
+                font-size: 26px;
+            }
+        }
+    }
+
+    &__title{
+            margin: 0;
+            font-size: 26px;
+            text-transform: uppercase;
+    }
+    
+    &--level{
+        list-style: none;
+        counter-reset: li;
+
+        .list__item{
+
+            &:before{
+                counter-increment: li;
+                float: left;
+                content: counters(li, ".") ".\00A0";
+            }
+        }
+    }
+
+    &--style_none{
+        padding: 10px;
+        list-style: none;
+        
+        .list__item{
+
+            &:before{
+                content: '';
+            }
+        }
+    }
+    
+    
+}
+
+/******* List Def *******/
+.list-def{
+
+    &__title{
+        font-weight: bold;
+    }
+
+    &__item{
+        margin-left: 0; 
+    }
+}
+
+/******* Footer *******/
+.footer{
+    background-color: $footer-bg-color;
+
+    &__col{
+        padding-right: 0;
+        
+        
+        @media (max-width: 991px){
+            padding-right: 15px;
+        }
+    }
+
+    &__logo{
+        margin-top: 40px;
+    }
+
+    &__menu{
+        margin-top: 40px;
+    }
+
+    &__partner-logos{
+        margin-top: 30px;
+    }
+
+    &__text{
+        margin-top: 30px;
+    }
+}
+
+/******* Partner Logos *******/
+.partner-logos{
+    font-size: 48px;
+    color: #424242;
+    text-transform: uppercase;
+
+     @media (max-width: 520px){
+        font-size: 30px;
+    }
+}
+
+/******* Copyright *******/
+.copyright{
+    background-color: $copyright-bg-color;
+    color: $copyright-font-color;
+    text-align: center;
+    font-size: 12px;
+    padding: 13px;
+    font-family: 'Roboto', sans-serif;
+    font-style: 100;
+}
+
+/******* Page *******/
+.page{
+    
+    &__footer{
+        margin-top: 70px;
+    }
+}
